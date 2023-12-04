@@ -2,26 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="scripts/script.js"></script>
     <title>Catálogo de Productos - AGoodShop</title>
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="Logo de agoodshop">
+        <div class="header-container">
+            <img src="images/logo.png" alt="Logo de agoodshop">
+            <div class="cart" id="cartCountElement">
+                🛒 <span id="cart-count">0</span>
+                <div class="cart-total-container">
+                    <div class="cart-total" id="cartTotalElement">
+                        Total: $<span id="cart-total">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <section class="product-container">
             <!-- Producto 1 -->
-            <div class="product">
-                <img src="images/product1.jpg" alt="Producto 1">
+            <div class="product on-sale">
+                <img src="images/1.jpg" alt="Producto 1">
                 <div class="product-info">
-                    <h2>Producto 1</h2>
+                    <h2>Mario + Rabbids Kingdom Battle</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$19.99</span>
-                    <form action="#" method="post" class="product-form">
-                        <label for="quantity1">Cantidad:</label>
-                        <input type="number" id="quantity1" name="quantity1" min="1" value="1">
+                    <span class="original-price">$4.99</span>
+                    <span class="discount-price">$2.75 (25% off)</span>
+                    <form onsubmit="addToCart(2.75); return false;" class="product-form">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -29,14 +40,13 @@
 
             <!-- Producto 2 -->
             <div class="product">
-                <img src="images/product2.jpg" alt="Producto 2">
+                <img src="images/2.jpg" alt="Producto 2">
                 <div class="product-info">
-                    <h2>Producto 2</h2>
+                    <h2>Minute of Islands</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$24.99</span>
+                    <span class="price">$20.99</span>
+                    <form onsubmit="addToCart(20.99); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity2">Cantidad:</label>
-                        <input type="number" id="quantity2" name="quantity2" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -44,14 +54,13 @@
 
             <!-- Producto 3 -->
             <div class="product">
-                <img src="images/product3.jpg" alt="Producto 3">
+                <img src="images/3.jpg" alt="Producto 3">
                 <div class="product-info">
-                    <h2>Producto 3</h2>
+                    <h2>Ni no Kuni: Wrath of the White Witch</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$19.99</span>
+                    <span class="price">$1.99</span>
+                    <form onsubmit="addToCart(1.99); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity3">Cantidad:</label>
-                        <input type="number" id="quantity3" name="quantity3" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -59,30 +68,27 @@
 
              <!-- Producto 4 -->
              <div class="product">
-                <img src="images/product4.jpg" alt="Producto 4">
+                <img src="images/4.jpg" alt="Producto 4">
                 <div class="product-info">
-                    <h2>Producto 4</h2>
+                    <h2>FAR: Lone Sails</h2>
                     <p>Descripción del producto...</p>
                     <span class="price">$69.95</span>
+                    <form onsubmit="addToCart(69.95); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity4">Cantidad:</label>
-                        <input type="number" id="quantity4" name="quantity4" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
             </div>
             <!-- Agrega productos similares para completar los 8 -->
 
-            <!-- Producto 1 -->
-            <div class="product">
-                <img src="images/product1.jpg" alt="Producto 1">
+            <div class="product on-sale">
+                <img src="images/5.jpg" alt="Producto 5">
                 <div class="product-info">
-                    <h2>Producto 1</h2>
+                    <h2>Roguebook</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$19.99</span>
-                    <form action="#" method="post" class="product-form">
-                        <label for="quantity1">Cantidad:</label>
-                        <input type="number" id="quantity1" name="quantity1" min="1" value="1">
+                    <span class="original-price">$19.99</span>
+                    <span class="discount-price">$14.01 (25% off)</span>
+                    <form onsubmit="addToCart(14.01); return false;" class="product-form">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -90,14 +96,13 @@
 
             <!-- Producto 2 -->
             <div class="product">
-                <img src="images/product2.jpg" alt="Producto 2">
+                <img src="images/6.jpg" alt="Producto 6">
                 <div class="product-info">
-                    <h2>Producto 2</h2>
+                    <h2>CRISIS CORE –FINAL FANTASY VII– REUNION</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$24.99</span>
+                    <span class="price">$2.99</span>
+                    <form onsubmit="addToCart(2.99); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity2">Cantidad:</label>
-                        <input type="number" id="quantity2" name="quantity2" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -105,14 +110,13 @@
 
             <!-- Producto 3 -->
             <div class="product">
-                <img src="images/product3.jpg" alt="Producto 3">
+                <img src="images/7.jpg" alt="Producto 7">
                 <div class="product-info">
-                    <h2>Producto 3</h2>
+                    <h2>Immortals Fenyx Rising</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$19.99</span>
+                    <span class="price">$20.90</span>
+                    <form onsubmit="addToCart(20.90); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity3">Cantidad:</label>
-                        <input type="number" id="quantity3" name="quantity3" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -120,14 +124,13 @@
 
              <!-- Producto 4 -->
              <div class="product">
-                <img src="images/product4.jpg" alt="Producto 4">
+                <img src="images/8.jpg" alt="Producto 8">
                 <div class="product-info">
-                    <h2>Producto 4</h2>
+                    <h2>MARIO + RABBIDS SPARKS OF HOPE</h2>
                     <p>Descripción del producto...</p>
-                    <span class="price">$69.95</span>
+                    <span class="price">$13.95</span>
+                    <form onsubmit="addToCart(13.95); return false;" class="product-form">
                     <form action="#" method="post" class="product-form">
-                        <label for="quantity4">Cantidad:</label>
-                        <input type="number" id="quantity4" name="quantity4" min="1" value="1">
                         <button type="submit">Añadir al carrito</button>
                     </form>
                 </div>
@@ -136,6 +139,10 @@
     </main>
     <footer>
         <p>&copy; 2023 agoodshop. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.game.com/" target="_blank" rel="noopener noreferrer">Visita Game</a>
+        </div>
     </footer>
+
 </body>
 </html>
